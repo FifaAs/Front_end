@@ -2,23 +2,23 @@ import React, { useState } from 'react';
 import AddArticle from "./AddArticle";
 
 const ArticleManager = () => {
-    // Состояние для полей ввода
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
     const [title, setTitle] = useState('');
     const [summary, setSummary] = useState('');
-    // Состояние для списка статей
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
     const [articles, setArticles] = useState([]);
 
-    // Функции изменения текста
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
     const handleTitleChange = (e) => setTitle(e.target.value);
     const handleSummaryChange = (e) => setSummary(e.target.value);
 
-    // Функция добавления
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     const handleAddClick = () => {
         if (title.trim() && summary.trim()) {
             const newArticle = { id: Date.now(), title, summary };
             setArticles([...articles, newArticle]);
 
-            // Очищаем поля после добавления
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             setTitle('');
             setSummary('');
         }
@@ -28,7 +28,7 @@ const ArticleManager = () => {
         <div style={{ padding: '20px' }}>
             <h1>State Manager</h1>
 
-            {/* Вызов вынесенного компонента */}
+            {/* пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */}
             <AddArticle
                 name="Add new state"
                 title={title}
@@ -40,7 +40,7 @@ const ArticleManager = () => {
 
             <hr />
 
-            {/* Вывод списка (просто для проверки работы) */}
+            {/* пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ (пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ) */}
             <div>
                 {articles.map(item => (
                     <div key={item.id} style={{ borderBottom: '1px solid #ccc' }}>
